@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <!-- <script type="module" src="script.js"></script> -->
 </head>
 <body>
     <script>
-        async function loadModel(){
-            const model = await tf.loadGraphModel("./saved_models/model23.keras");
+        MODEL_URL = './saved_models/model23/tfjs/model23/model.json'
+        async function loadModel(MODEL_URL){
+            const model = await tf.loadGraphModel(MODEL_URL);
             console.log("Model loaded successfully");
             console.log(model);
+            return model;
         }
-        loadModel();
+        model = loadModel(MODEL_URL);
     </script>
 </body>
 </html>
