@@ -44,6 +44,23 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  box-shadow: 0 8px 6px -6px black;
+}
+.hero-button:hover {
+  background-color: rgb(174, 233, 230);
+  color: black;
+  border: black solid 2px;
+  text-decoration: underline;
+  /* font-size: large; */
+  /* font-family: monospace; */
+}
+.btn-change6 {
+  box-shadow: 0 0 1px #ccc;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s; 
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  box-shadow: 0px 0 0 #31708f inset;
 }
 
 .features {
@@ -74,4 +91,17 @@ body {
 .footer-link {
   color: white;
   text-decoration: none;
+}
+
+
+.shadow-custom-sm {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-custom-lg {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

@@ -37,7 +37,7 @@
           title="Toggle Navigation Menu"
           ><i class="fa fa-bars"></i
         ></a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a
           href="#about"
           class="w3-bar-item w3-button w3-padding-large w3-hide-small"
@@ -52,9 +52,9 @@
     </nav>
 
     <div class="container-fluid mt-5 p-5">
-      <h1 class="w3-center">How the tool works</h1>
+      <h1 class="w3-center h1">How the tool works</h1>
       <div
-        class="container-fluid w-50 d-flex flex-md-row align-items-center justify-content-around"
+        class="container-fluid w-75 d-flex flex-md-row align-items-center justify-content-around"
       >
         <div class="card feature m-2" style="width: 33rem">
           <img
@@ -105,15 +105,15 @@
 
     
 
-    <div class="container-fluid w-50 mt-5">
+    <div class="container-fluid mt-5" style="width: 60%;">
       <div
         class="diagnosis container-fluid d-flex align-items-center justify-content-around"
       >
-        <div class="diagnosis-form">
-          <h2>Upload your chest X-ray</h2>
-          <p>Select an image file from your device or drag and drop it here.</p>
+        <div class="diagnosis-form d-flex flex-column w-100 m-3">
+          <h2 class="">Upload your chest X-ray</h2>
+          <p class="">Select an image file from your device or drag and drop it here.</p>
           <p><b>Ensure the format is 150x150</b></p>
-          <form id="diagnosis-form" method="post" enctype="multipart/form-data">
+          <form class="d-flex flex-column align-items-center p-1" id="diagnosis-form" onsubmit="predict(this)" enctype="multipart/form-data">
             <input
               type="file"
               id="image-file"
@@ -124,7 +124,7 @@
             <label for="image-file">
               <img id="img-file-preview" src="http://placehold.it/150" alt="your image" />
             </label>
-            <button type="submit" id="submit-button">Submit</button>
+            <button type="submit" onsubmit="null" id="submit-button">Submit</button>
           </form>
         </div>
         <div class="diagnosis-result">

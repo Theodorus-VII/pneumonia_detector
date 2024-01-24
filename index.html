@@ -26,16 +26,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <!-- <script>
-      MODEL_URL = "saved_models/tfjs/model23/model.json";
-      async function loadModel(MODEL_URL) {
-        const model = await tf.loadLayersModel(MODEL_URL);
-        console.log("Model loaded successfully");
-        console.log(model.summary());
-        return model;
-      }
-      model = loadModel(MODEL_URL);
-    </script> -->
   </head>
 
   <body class="container-fluid m-0 p-0">
@@ -48,21 +38,16 @@
           title="Toggle Navigation Menu"
           ><i class="fa fa-bars"></i
         ></a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a
-          href="#about"
+          href="about.html"
           class="w3-bar-item w3-button w3-padding-large w3-hide-small"
-          >ABOUT US</a
-        >
-        <a
-          href="#contact"
-          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
-          >CONTACT</a
+          >ABOUT</a
         >
       </div>
     </nav>
 
-    <header class="w3-container w3-green w3-center" style="padding: 128px 16px">
+    <header class="w3-container w3-green w3-center shadow-lg" style="padding: 128px 16px">
       <div class="container-fluid mt-5 flex-column">
         <p class="text-lg">Have an X-ray you want to check,</p>
         <h1>try the tool for free now!</h1>
@@ -73,7 +58,7 @@
     <div
       class="container-fluid m-0 p-0 d-flex flex-column align-items-center justify-content-around"
     >
-      <div class="hero p-5 m-2">
+      <div class="hero p-5 m-2 mx-5">
         <div class="hero-text">
           <h1>AI-Powered Pneumonia Detector</h1>
           <p>
@@ -112,20 +97,20 @@
       </div>
       <div
         id="about-us"
-        class="col-12 d-flex flex-sm-row flex-column text-dark position-relative"
+        class="col-12 d-flex flex-sm-row flex-column position-relative w3-black text-light shadow-lg my-3 rounded align-items-center justify-content-around"
         style="background-color: rgb(209, 209, 209)"
       >
         <div
-          class="col-sm-8 col-12 text-center p-5 m-2 d-flex align-items-center"
+          class="col-sm-8 col-12 text-start p-5 m-2 d-flex align-items-center"
           style="color: rgb(230, 230, 230); font-size: 1.4rem"
         >
           <div
-            class="col-12 col-md-6 display-6 font-weight-bold text-center mt-0 mb-2 fw-bolder text-dark"
+            class="col-12 col-md-6 display-6 font-weight-bold text-center mt-0 mb-2 fw-bolder"
           >
             Who we are
           </div>
           <div
-            class="text-start text-dark ps-4"
+            class="text-justify ps-4"
             style="
               font-size: medium;
               width: 60%;
@@ -210,19 +195,19 @@
       </div>
 
       <!-- The slideshow/carousel -->
-      <div class="carousel-inner bg-dark py-2 px-1" style="width: 100%">
+      <div class="carousel-inner w3-black py-3 px-1 shadow-custom-lg my-5" style="width: 100%;">
         <div class="carousel-item active w-100">
           <div
-            class="bg-dark d-flex align-items-center justify-content-around w-100"
-            style="height: 930px"
+            class="w3-black d-flex align-items-center justify-content-around w-100"
+            style="height: 720px"
           >
-            <div class="card feature bg-light" style="width: 33rem">
+            <div class="card feature bg-light" style="width: 30rem;">
               <img
-                src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                src="./assets/upload2.png"
                 class="card-img-top"
                 alt="..."
               />
-              <div class="card-body">
+              <div class="card-body bg-dark text-light py-4">
                 <h3 class="card-title">Upload your chest X-ray</h3>
                 <p class="card-text">
                   You can upload your chest X-ray image in JPG or PNG format.
@@ -234,12 +219,12 @@
         </div>
         <div class="carousel-item w-100">
           <div
-            class="bg-dark d-flex align-items-center justify-content-around w-100"
-            style="height: 930px"
+            class="w3-black d-flex align-items-center justify-content-around w-100"
+            style="height: 720px"
           >
-            <div class="card feature bg-light" style="width: 33rem">
+            <div class="card feature bg-light" style="width: 30rem;">
               <img
-                src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                src="./assets/diag2.png"
                 class="card-img-top"
                 alt="..."
               />
@@ -256,10 +241,10 @@
         </div>
         <div class="carousel-item w-100">
           <div
-            class="bg-dark d-flex align-items-center justify-content-around w-100"
-            style="height: 930px"
+            class="w3-black d-flex align-items-center justify-content-around w-100"
+            style="height: 720px"
           >
-            <div class="card feature bg-light" style="width: 33rem">
+            <div class="card feature bg-light" style="width: 30rem;">
               <img
                 src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                 class="card-img-top"
@@ -295,7 +280,16 @@
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>
-    <footer class="row p-0 m-0 mt-5 bg-dark">
+
+    <!-- call to action -->
+    <div class="d-flex w3-center shadow-inset p-5">
+      <div class="container-fluid mt-5 flex-column">
+        <p class="text-lg">Have an X-ray you want to check,</p>
+        <h1 class="text-shadow">try the tool for free now!</h1>
+        <a href="feature.html" class="hero-button shadow-lg btn-change6">START DIAGNOSIS</a>
+      </div>
+    </div>
+    <footer class="row p-0 m-0 mt-5 w3-black shadow-custom-sm">
       <div class="d-flex justify-content-around align-items-center fw-bold p-4">
         <a class="text-decoration-none" style="color: white" href="./index.html"
           >Home</a
