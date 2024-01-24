@@ -1,7 +1,15 @@
+// initialising global variables
 MODEL_URL = "saved_models/tfjs/model23/model.json";
-let model;
+LABELS = {
+  0: "NORMAL",
+  1: "PNEUMONIA",
+};
 IMG_SIZE = 150;
 
+// initialising the model
+let model;
+
+// loading the model
 loadModel(MODEL_URL);
 
 function readURL(input) {
@@ -24,28 +32,71 @@ async function loadModel(MODEL_URL) {
   //   return model;
 }
 
-async function predict(img) {
+async function predict(imgElement) {
   console.log("predicting...");
-  console.log(`img: ${img}`);
 
-//   create tensor
-  let imgTensor = tf.browser.fromPixels(img);
+  async function to_tfGrayscaleTensor(imgElement) {
+    // Function to convert HTMLImageElement to TensorFlow.js Tensor
+    async function imageElementToGrayscaleTensor(imgElement) {
+      return tf.tidy(() => {
+        // Create a canvas element
+        const canvas = document.createElement("canvas");
+        canvas.width = imgElement.width;
+        canvas.height = imgElement.height;
 
-  //   convert to grayscale
-  imgTensor = tf.image.rgbToGrayscale(imgTensor);
+        // Draw the image onto the canvas
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
 
-//   resize and normalize
+        // Get the image data from the canvas
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+        // Convert RGB image to grayscale using the luminance formula
+        const data = new Float32Array(imageData.width * imageData.height);
+        for (let i = 0; i < data.length; ++i) {
+          const offset = i * 4;
+          const r = imageData.data[offset];
+          const g = imageData.data[offset + 1];
+          const b = imageData.data[offset + 2];
+          data[i] = 0.299 * r + 0.587 * g + 0.114 * b;
+        }
+
+        // Create a 3D tensor from the grayscale data
+        const tensor = tf.tensor3d(data, [canvas.height, canvas.width, 1]);
+
+        // Adding batch dimension for the conv_2d input layer
+        return tensor.expandDims(0);
+      });
+    }
+
+    // Convert HTMLImageElement to grayscale TensorFlow.js Tensor
+    const grayscaleTensor = await imageElementToGrayscaleTensor(imgElement);
+    console.log(grayscaleTensor);
+    return grayscaleTensor;
+  }
+
+  let imgTensor = await to_tfGrayscaleTensor(imgElement);
+  console.log(`tensor: ${imgTensor}`);
+
+  //   preprocessing
+  // resizing and normalizing
   imgTensor = tf.image.resizeBilinear(imgTensor, [IMG_SIZE, IMG_SIZE]);
   imgTensor = imgTensor.div(tf.scalar(255));
-  imgTensor = imgTensor.expandDims();
-  singleImagePlot(imgTensor);
+  //   singleImagePlot(imgTensor);
+
+  // predict the class based on the model. returns a tf.js tensor
   let prediction = model.predict(imgTensor);
 
-  // Log the prediction
-  console.log(prediction);
-  // Convert the prediction to a binary value
- let binaryPrediction = prediction.argmax(1)
- console.log(binaryPrediction)
+  // converting the tf.js tensor to an array
+  //   only with numerical value for the prediction.
+  const predictionsArray = prediction.dataSync();
+
+  let predictedClassInd = predictionsArray[0]
+
+  // Logging the prediction for debugging
+  console.log(`Prediction Class: ${predictedClassInd}`);
+
+  console.log(LABELS[predictedClassInd])
 }
 
 function submitForm(event) {
@@ -74,6 +125,7 @@ var form = document.getElementById("diagnosis-form");
 form.addEventListener("submit", submitForm);
 
 async function singleImagePlot(image) {
+  // useless
   const canvas = document.createElement("canvas");
   canvas.width = 28;
   canvas.height = 28;

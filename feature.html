@@ -65,7 +65,7 @@
           <div class="card-body">
             <h3 class="card-title">Upload your chest X-ray</h3>
             <p class="card-text">
-              You can upload your chest X-ray image in JPG or PNG format. The
+              You can upload your chest X-ray image in JPG, PNG or JPEG format. The
               image should be clear and show the entire chest area.
             </p>
           </div>
@@ -110,9 +110,9 @@
         class="diagnosis container-fluid d-flex align-items-center justify-content-around"
       >
         <div class="diagnosis-form d-flex flex-column w-100 m-3">
-          <h2 class="">Upload your chest X-ray</h2>
-          <p class="">Select an image file from your device or drag and drop it here.</p>
-          <p><b>Ensure the format is 150x150</b></p>
+          <h2 class="w3-center">Upload your chest X-ray</h2>
+          <p class="w3-center">Select an image file from your device or drag and drop it here.</p>
+          <p class="w3-center"><b>Ensure the format is 150x150</b> for the best possible results.</p>
           <form class="d-flex flex-column align-items-center p-1" id="diagnosis-form" onsubmit="predict(this)" enctype="multipart/form-data">
             <input
               type="file"
@@ -121,11 +121,12 @@
               accept="image/*"
               onchange="readURL(this);"
             />
-            <label for="image-file">
+            <label class="w-100" for="image-file" style="">
               <img id="img-file-preview" src="http://placehold.it/150" alt="your image" />
             </label>
             <button type="submit" onsubmit="null" id="submit-button">Submit</button>
           </form>
+          
         </div>
         <div class="diagnosis-result">
           <h2>Diagnosis Result:</h2>
