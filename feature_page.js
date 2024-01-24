@@ -1,14 +1,30 @@
 // initialising global variables
-MODEL_URL = "saved_models/tfjs/model23/model.json";
+MODEL_URL1 = "saved_models/tfjs/Final_Recall/model.json";
+MODEL_URL2 = "saved_models/tfjs/model23/model.json";
+
+MODEL_URL = MODEL_URL1;
+
 LABELS = {
   0: "NORMAL",
   1: "PNEUMONIA",
 };
+// RESPONSES to give based on the confidence of the prediction
+const RESPONSES = [
+  "Our diagnosis indicates a very low probability of pneumonia. You are likely healthy, but seek expert medical help if you want a full diagnosis.",
+  "Our diagnosis indicates a low probability of pneumonia. You may have some mild symptoms or other conditions that are not related to pneumonia. You should monitor your health and consult a doctor if you feel worse.",
+  "Our diagnosis indicates a moderate probability of pneumonia. You may have some signs of pneumonia or other respiratory infections. You should seek medical advice and get tested for pneumonia.",
+  "Our diagnosis indicates a high probability of pneumonia. You may have severe symptoms or complications of pneumonia. We advise that you see a doctor as soon as possible and get tested and treated for pneumonia.",
+  "Our diagnosis indicates a very high probability of pneumonia. Due to the possibly high severity of the condition, we advise that you seek medical attention as soon as possible.",
+];
+
+// tresholds to determine confidence levels in the prediction.
+// predictions are between [0,1], the algorithm is confident in the prediction when close to either extreme
+const responseThresholds = [0.1, 0.3, 0.5, 0.7, 0.9];
+
 IMG_SIZE = 150;
 
 // initialising the model
 let model;
-
 // loading the model
 loadModel(MODEL_URL);
 
@@ -78,8 +94,8 @@ async function predict(imgElement) {
   let imgTensor = await to_tfGrayscaleTensor(imgElement);
   console.log(`tensor: ${imgTensor}`);
 
-  //   preprocessing
-  // resizing and normalizing
+  //   PREPROCESSING
+  // RESIZING and NORMALIZING
   imgTensor = tf.image.resizeBilinear(imgTensor, [IMG_SIZE, IMG_SIZE]);
   imgTensor = imgTensor.div(tf.scalar(255));
   //   singleImagePlot(imgTensor);
@@ -90,13 +106,35 @@ async function predict(imgElement) {
   // converting the tf.js tensor to an array
   //   only with numerical value for the prediction.
   const predictionsArray = prediction.dataSync();
-
-  let predictedClassInd = predictionsArray[0]
+  let predictedProbability = predictionsArray[0];
 
   // Logging the prediction for debugging
-  console.log(`Prediction Class: ${predictedClassInd}`);
+  console.log(`Prediction Class: ${predictedProbability}`);
+  return predictedProbability;
+}
 
-  console.log(LABELS[predictedClassInd])
+async function diagnosisResult(predictedProbability) {
+  // sets the DOM elements to give feedback according to the prediction.
+  const feedbackMessage = document.querySelector("#feedback-message");
+  const diagnosisScore = document.querySelector("#diagnosis-score");
+
+  var feedbackIndex = responseThresholds.reverse().findIndex(function (threshold) {
+    return predictedProbability < threshold;
+  });
+
+  console.log(`feedbackIndex: ${feedbackIndex}, predicted: ${predictedProbability}`)
+  if (feedbackIndex === -1) {
+    feedbackIndex = RESPONSES.length - 1;
+  }
+  var feedback = RESPONSES[feedbackIndex];
+
+  // Display the feedback message and download link
+  feedbackMessage.textContent = feedback;
+  feedbackMessage.classList.add("bg-dark");
+  feedbackMessage.classList.add("p-5");
+  feedbackMessage.classList.add("rounded");
+  feedbackMessage.classList.add("text-light");
+  diagnosisScore.textContent = "";
 }
 
 function submitForm(event) {
@@ -112,9 +150,10 @@ function submitForm(event) {
     // Create an image object
     var image = new Image();
     // Add an onload event listener
-    image.onload = function () {
+    image.onload = async function () {
       console.log(image.width, image.height);
-      predict(image);
+      let predictedProbability = await predict(image);
+      await diagnosisResult(predictedProbability);
     };
     image.src = dataURL;
   });

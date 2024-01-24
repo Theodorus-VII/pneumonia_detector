@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="feature_page_style.css" />
     <script src="feature_page.js"></script>
     <script type="module" src="feature_page.js"></script>
@@ -43,25 +43,22 @@
           class="w3-bar-item w3-button w3-padding-large w3-hide-small"
           >ABOUT US</a
         >
-        <a
-          href="#contact"
-          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
-          >CONTACT</a
-        >
       </div>
     </nav>
 
-    <div class="container-fluid mt-5 p-5">
+    <div class="container-fluid mt-5 p-5 d-flex flex-column" style="height: 720px">
       <h1 class="w3-center h1">How the tool works</h1>
       <div
-        class="container-fluid w-75 d-flex flex-md-row align-items-center justify-content-around"
+        class="container-fluid w-75 d-flex flex-fill flex-md-row align-items-center justify-content-around"
       >
-        <div class="card feature m-2" style="width: 33rem">
-          <img
-            src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-            class="card-img-top"
-            alt="..."
-          />
+        <div class="card feature m-2 h-100 d-flex flex-column" style="width: 33rem">
+          <div class="flex-fill">
+            <img
+              src="./assets/upload_guide.png"
+              class="card-img-top img-fluid img"
+              alt="...",
+            />
+          </div>
           <div class="card-body">
             <h3 class="card-title">Upload your chest X-ray</h3>
             <p class="card-text">
@@ -72,8 +69,8 @@
         </div>
         <div class="card feature m-2" style="width: 33rem">
           <img
-            src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-            class="card-img-top"
+            src="./assets/diag.png"
+            class="card-img-top img-fluid"
             alt="..."
           />
           <div class="card-body">
@@ -87,16 +84,15 @@
         </div>
         <div class="card feature m-2" style="width: 33rem">
           <img
-            src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-            class="card-img-top"
+            src="./assets/feedback_high_guide.png"
+            class="card-img-top img-fluid"
             alt="..."
           />
           <div class="card-body">
             <h3 class="card-title">Consult a doctor</h3>
             <p class="card-text">
               If you have a high probability of pneumonia, you should consult a
-              doctor as soon as possible. You can download your report and share
-              it with your doctor.
+              doctor as soon as possible.
             </p>
           </div>
         </div>
@@ -133,6 +129,7 @@
         <div class="diagnosis-result">
           <h2>Diagnosis Result:</h2>
           <p id="diagnosis-score">After submission the model's diagnosis will show up here.</p>
+          <p id="feedback-message"></p>
           
         </div>
       </div>
