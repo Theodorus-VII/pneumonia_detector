@@ -1,0 +1,36 @@
+.about {
+    margin-bottom: 40px;
+  }
+
+  .about h2 {
+    color: #007bff;
+  }
+
+  .about p {
+    font-size: 20px;
+  }
+
+  .team {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .team-member {
+    text-align: center;
+  }
+
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .team-member h3 {
+    margin-top: 10px;
+  }
+
+  .team-member p {
+    font-size: 16px;
+  }

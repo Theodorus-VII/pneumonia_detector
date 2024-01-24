@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body class="container-fluid m-0 p-0 d-flex flex-column align-items-center">
+    <nav class="w3-top">
+      <div class="w3-bar w3-black w3-card">
+        <a
+          class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0)"
+          onclick="myFunction()"
+          title="Toggle Navigation Menu"
+          ><i class="fa fa-bars"></i
+        ></a>
+        <a href="./index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a
+          href="./about.html"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >ABOUT</a
+        >
+      </div>
+    </nav>
+
+    <div class="w3-gray about p-5 w-75 mb-0 d-flex w3-center flex-column align-items-center justify-content-around">
+      <div class="about w-75 d-flex flex-column">
+        <h1 >About us</h1>
+        <div class="topic w-100 d-flex w3-center align-items-center justify-content-around m-3">
+          <h2>What is this project?</h2>
+          <p class="bg-dark rounded w-75 w3-center text-light  p-5 mx-2">
+            This AI-Powered Pneumonia Diagnosis tool is a web-based application
+            that uses artificial intelligence to assist in the diagnosis of
+            pneumonia from chest radiography (X-rays). Pneumonia is a serious lung
+            infection that can affect anyone, especially children, elderly, and
+            people with weak immune systems. It can cause fever, cough, difficulty
+            breathing, and even death. According to the World Health Organization,
+            pneumonia is the leading cause of death among children under five
+            years old, killing more than 800,000 children
+            <a href="https://www.who.int/news-room/fact-sheets/detail/pneumonia"
+              >every year</a
+            >. Therefore, early and accurate diagnosis of pneumonia is crucial for
+            effective treatment and prevention.
+          </p>
+        </div>
+        <div class="topic w-100 d-flex w3-center align-items-center justify-content-around m-3">
+          <p class="bg-dark rounded w-75 w3-center text-light p-5 mx-2">
+            We are three students who created this project as part of a University
+            Project. We wanted to learn more about machine learning and deep
+            learning, and apply them to a real-world problem.
+          </p>
+          <h2>Who are we?</h2>
+        </div>
+        <div class="topic w-100 d-flex w3-center align-items-center justify-content-around m-3">
+          <h2>How did we make it?</h2>
+          <p class="bg-dark rounded w-75 w3-center text-light p-5 mx-2">
+            We used Python and TensorFlow to train our model on an
+            <a
+              href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia"
+              >open source dataset</a
+            >
+            of 5863 chest X-ray images, labeled into two categories: pneumonia and
+            normal. We used a convolutional neural network (CNN) architecture to
+            build our pneumonia detection system. As part of the integration into
+            a web-app, we also used TensorFlow.js to run our model in the browser,
+            ensuring privacy and accessibility for our users. No data is sent to a
+            server, and the model and prediction are run locally directly in the
+            browser. The code for our project is also open source and is available
+            on
+            <a href="">GitHub</a>.
+          </p>
+        </div>
+        <div class="container-fluid topic w-100 d-flex w3-center align-items-center justify-content-around m-3">
+          <div class="d-flex flex-column col-9">
+            <p class="bg-dark rounded w-100 w3-center text-light p-5 mx-2">
+              Pneumonia is a common and potentially serious lung infection that can
+              affect people of all ages. It is usually diagnosed by a doctor based
+              on the patient's symptoms, medical history, physical examination, and
+              chest X-ray. However,
+              <em>diagnosing pneumonia can be challenging</em>, especially in
+              low-resource settings where access to medical facilities and equipment
+              is limited. Moreover, chest X-ray images can be difficult to
+              interpret, and different radiologists may sometimes have different
+              opinions on the final diagnosis.
+            </p>
+            <p class="bg-dark rounded w-100 w3-center text-light p-5 mx-2">
+              That is why we think that an AI system can be a useful tool for
+              assisting doctors in diagnosing pneumonia. Our system can analyze
+              chest X-ray images and give a probability score for pneumonia. This
+              can help doctors add another layer of security to their diagnosis, and
+              avoid false negatives.
+            </p>
+          </div>
+          <h2 class="col-3 mx-2">Why did we make it?</h2>
+        </div>
+        <div class="w3-center container-fluid d-flex flex-column justify-content-around align-items-center my-5">
+          <p class="bg-dark rounded w-75 w3-center text-danger p-5 mx-2">
+            <b>
+              However, our system is not a replacement for normal medical
+              diagnosis, and it should not be used as the sole basis for any
+              health decisions. We always recommend that users consult a doctor
+              for professional advice and treatment.
+            </b>
+          </p>
+          <p class="bg-dark rounded w-75 w3-center text-light p-5 mx-2">
+            We hope that our project can help people who are at risk of pneumonia,
+            especially in developing countries where access to medical facilities
+            and resources is limited. We also hope that our project can inspire
+            other students and developers to use AI for social good.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-100">
+      <footer class="row p-0 m-0 w3-black">
+        <div
+          class="d-flex justify-content-around align-items-center fw-bold p-4"
+        >
+          <a
+            class="text-decoration-none"
+            style="color: white"
+            href="./index.html"
+            >Home</a
+          >
+          <a class="text-decoration-none" style="color: white" href="#about-us"
+            >About us</a
+          >
+          <a
+            class="text-decoration-none"
+            style="color: white"
+            href="#contact-us"
+            >Contact</a
+          >
+        </div>
+        <div class="text-center py-3" style="color: white">
+          &copy; 2023. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
