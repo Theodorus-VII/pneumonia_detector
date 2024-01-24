@@ -1,8 +1,5 @@
 // initialising global variables
-MODEL_URL1 = "saved_models/tfjs/Final_Recall/model.json";
-MODEL_URL2 = "saved_models/tfjs/model23/model.json";
-
-MODEL_URL = MODEL_URL1;
+MODEL_URL = "saved_models/tfjs/Possible_Final_Recall_Update/model.json";
 
 LABELS = {
   0: "NORMAL",
