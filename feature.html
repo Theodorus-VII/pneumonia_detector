@@ -113,7 +113,7 @@
           <h2 class="w3-center">Upload your chest X-ray</h2>
           <p class="w3-center">Select an image file from your device or drag and drop it here.</p>
           <p class="w3-center"><b>Ensure the format is 150x150</b> for the best possible results.</p>
-          <form class="d-flex flex-column align-items-center p-1" id="diagnosis-form" onsubmit="predict(this)" enctype="multipart/form-data">
+          <form class="image-form d-flex flex-column align-items-center p-1" id="diagnosis-form" onsubmit="predict(this)" enctype="multipart/form-data">
             <input
               type="file"
               id="image-file"
@@ -121,12 +121,14 @@
               accept="image/*"
               onchange="readURL(this);"
             />
-            <label class="w-100" for="image-file" style="">
-              <img id="img-file-preview" src="http://placehold.it/150" alt="your image" />
+            <label class="w-100 d-flex h-100 align-items-center justify-content-around" for="image-file">
+              <h1 class="upload-icon">
+                <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+              </h1>
+              <img id="img-file-preview" class="" src="http://placehold.it/150"  style="height: 150px; width: 150px;" alt="your image" />
             </label>
-            <button type="submit" onsubmit="null" id="submit-button">Submit</button>
+            <button type="submit" class="btn btn-primary" onsubmit="null" id="submit-button">Submit</button>
           </form>
-          
         </div>
         <div class="diagnosis-result">
           <h2>Diagnosis Result:</h2>
