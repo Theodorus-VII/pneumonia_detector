@@ -7,99 +7,113 @@ input[type="file"] {
 }
 
 .diagnosis {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
 
-  .diagnosis-form {
-    flex: 1;
-    margin-right: 20px;
-  }
+.diagnosis-form {
+  flex: 1;
+  margin-right: 20px;
+}
 
-  .diagnosis-form input[type="file"] {
-    display: none;
-  }
+.diagnosis-form input[type="file"] {
+  display: none;
+}
 
-  .diagnosis-form label {
-    display: block;
-    width: 170px;
-    height: 170px;
-    border: 2px dashed #007bff;
-    cursor: pointer;
-    text-align: center;
-    line-height: 170px;
-  }
+.diagnosis-form label {
+  display: block;
+  width: 170px;
+  height: 170px;
+  border: 2px dashed #007bff;
+  cursor: pointer;
+  text-align: center;
+  line-height: 170px;
+}
 
-  .diagnosis-form button {
-    display: block;
-    width: 300px;
-    height: 50px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-  }
+.diagnosis-form button {
+  display: block;
+  width: 300px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
 
-  .diagnosis-result {
-    flex: 1;
-    margin-left: 20px;
-  }
+.diagnosis-result {
+  flex: 1;
+  margin-left: 20px;
+}
 
-  .diagnosis-result h2 {
-    color: #007bff;
-  }
+.diagnosis-result h2 {
+  color: #007bff;
+}
 
-  .diagnosis-result p {
-    font-size: 20px;
-  }
+.diagnosis-result p {
+  font-size: 20px;
+}
 
-  .diagnosis-result img {
-    width: 300px;
-    height: 300px;
-  }
+.diagnosis-result img {
+  width: 300px;
+  height: 300px;
+}
 
+.file-uploader {
+  /* make it invisible */
+  opacity: 0;
+  /* make it take the full height and width of the parent container */
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  /* make it absolute positioned */
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
 
+.upload-icon {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* initial icon state */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #858585;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #4b4b4b;
+}
 
+.image-form {
+  aspect-ratio: 1;
+  opacity: 0.75;
+  position: relative;
+  overflow: hidden;
+}
+/* toggle icon state */
+.image-form-label:hover .upload-icon {
+  opacity: 1;
+}
 
+#feedback-message {
+  opacity: 0;
+}
 
+#feedback-message.activated {
+  opacity: 1;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 
-  
-  .file-uploader {
-    /* make it invisible */
+@keyframes fadeInAnimation {
+  0% {
     opacity: 0;
-    /* make it take the full height and width of the parent container */
-    height: 100%;
-    width: 100%;
-    cursor: pointer;
-    /* make it absolute positioned */
-    position: absolute;
-    top: 0%;
-    left: 0%;
   }
-  
-  .upload-icon {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* initial icon state */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    color: #ccc;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #bbb;
-  }
-  
-  .image-form {
-    aspect-ratio: 1;
-    opacity: 0.75;
-    position: relative;
-    overflow: hidden;
-  }
-  /* toggle icon state */
-  .image-form:hover .upload-icon {
+  100% {
     opacity: 1;
   }
+}

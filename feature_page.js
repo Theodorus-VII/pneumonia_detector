@@ -115,11 +115,15 @@ async function diagnosisResult(predictedProbability) {
   const feedbackMessage = document.querySelector("#feedback-message");
   const diagnosisScore = document.querySelector("#diagnosis-score");
 
-  var feedbackIndex = responseThresholds.reverse().findIndex(function (threshold) {
-    return predictedProbability < threshold;
-  });
+  var feedbackIndex = responseThresholds
+    .reverse()
+    .findIndex(function (threshold) {
+      return predictedProbability < threshold;
+    });
 
-  console.log(`feedbackIndex: ${feedbackIndex}, predicted: ${predictedProbability}`)
+  console.log(
+    `feedbackIndex: ${feedbackIndex}, predicted: ${predictedProbability}`
+  );
   if (feedbackIndex === -1) {
     feedbackIndex = RESPONSES.length - 1;
   }
@@ -131,12 +135,16 @@ async function diagnosisResult(predictedProbability) {
   feedbackMessage.classList.add("p-5");
   feedbackMessage.classList.add("rounded");
   feedbackMessage.classList.add("text-light");
+  feedbackMessage.classList.add("activated");
   diagnosisScore.textContent = "";
 }
 
 function submitForm(event) {
   console.log("submitting image...");
   event.preventDefault();
+
+  const spinner = document.getElementById("spinner-prediction");
+  spinner.classList.toggle("visually-hidden");
   var fileInput = document.getElementById("image-file");
   var file = fileInput.files[0];
 
@@ -151,6 +159,7 @@ function submitForm(event) {
       console.log(image.width, image.height);
       let predictedProbability = await predict(image);
       await diagnosisResult(predictedProbability);
+      spinner.classList.toggle("visually-hidden");
     };
     image.src = dataURL;
   });

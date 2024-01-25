@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="feature_page_style.css" />
     <script src="feature_page.js"></script>
     <script type="module" src="feature_page.js"></script>
@@ -37,7 +37,9 @@
           title="Toggle Navigation Menu"
           ><i class="fa fa-bars"></i
         ></a>
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large"
+          >HOME</a
+        >
         <a
           href="./about.html"
           class="w3-bar-item w3-button w3-padding-large w3-hide-small"
@@ -46,26 +48,33 @@
       </div>
     </nav>
 
-    <div class="container-fluid my-5 p-5 d-flex flex-column" >
+    <div class="container-fluid my-5 p-5 d-flex flex-column">
       <h1 class="w3-center h1">How the tool works</h1>
       <div
         class="container-fluid w-75 d-flex flex-fill flex-md-row align-items-center justify-content-around"
       >
-        <div class="card feature border border-dark shadow m-2 h-100 d-flex flex-column" style="width: 33rem">
-            <img
-              src="./assets/upload_guide.png"
-              class="card-img-top img-fluid img border shadow"
-              alt="...",
-            />
+        <div
+          class="card feature border border-dark shadow m-2 h-100 d-flex flex-column"
+          style="width: 33rem"
+        >
+          <img
+            src="./assets/upload_guide.png"
+            class="card-img-top img-fluid img border shadow"
+            alt="..."
+            ,
+          />
           <div class="card-body">
             <h3 class="card-title">Upload your chest X-ray</h3>
             <p class="card-text">
-              You can upload your chest X-ray image in JPG, PNG or JPEG format. The
-              image should be clear and show the entire chest area.
+              You can upload your chest X-ray image in JPG, PNG or JPEG format.
+              The image should be clear and show the entire chest area.
             </p>
           </div>
         </div>
-        <div class="card feature border border-dark shadow m-2" style="width: 33rem">
+        <div
+          class="card feature border border-dark shadow m-2"
+          style="width: 33rem"
+        >
           <img
             src="./assets/diag.png"
             class="card-img-top img-fluid border shadow"
@@ -75,11 +84,14 @@
             <h3 class="card-title">Get instant results</h3>
             <p class="card-text">
               Our AI model will analyze your chest X-ray image and give you a
-              probability score for pneumonia. 
+              probability score for pneumonia.
             </p>
           </div>
         </div>
-        <div class="card feature border border-dark shadow m-2" style="width: 33rem">
+        <div
+          class="card feature border border-dark shadow m-2"
+          style="width: 33rem"
+        >
           <img
             src="./assets/feedback_high_guide.png"
             class="card-img-top img-fluid border shadow"
@@ -96,17 +108,24 @@
       </div>
     </div>
 
-    
-
-    <div class="container-fluid mt-5" style="width: 60%;">
+    <div class="container-fluid mt-5" style="width: 60%">
       <div
         class="diagnosis container-fluid d-flex align-items-center justify-content-around"
       >
         <div class="diagnosis-form d-flex flex-column w-100 m-3">
           <h2 class="w3-center">Upload your chest X-ray</h2>
-          <p class="w3-center">Select an image file from your device or drag and drop it here.</p>
-          <p class="w3-center"><b>Ensure the format is 150x150</b> for the best possible results.</p>
-          <form class="image-form d-flex flex-column align-items-center p-1" id="diagnosis-form" onsubmit="predict(this)" enctype="multipart/form-data">
+          <p class="w3-center">
+            Click below and select an image file from your device.
+          </p>
+          <p class="w3-center">
+            <b>Ensure the format is 150x150</b> for the best possible results.
+          </p>
+          <form
+            class="image-form d-flex flex-column align-items-center p-1"
+            id="diagnosis-form"
+            onsubmit="predict(this)"
+            enctype="multipart/form-data"
+          >
             <input
               type="file"
               id="image-file"
@@ -114,20 +133,43 @@
               accept="image/*"
               onchange="readURL(this);"
             />
-            <label class="w-100 d-flex h-100 align-items-center justify-content-around" for="image-file">
+            <label
+              class="image-form-label w-100 d-flex h-100 align-items-center justify-content-around"
+              for="image-file"
+            >
               <h1 class="upload-icon">
                 <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
               </h1>
-              <img id="img-file-preview" class="" src="http://placehold.it/150"  style="height: 150px; width: 150px;" alt="your image" />
+              <img
+                id="img-file-preview"
+                class="img-fluid"
+                src="http://placehold.it/150"
+                alt="your image"
+              />
             </label>
-            <button type="submit" class="btn btn-primary" onsubmit="null" id="submit-button">Submit</button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              onsubmit="null"
+              id="submit-button"
+            >
+              Submit
+            </button>
           </form>
         </div>
         <div class="diagnosis-result">
           <h2>Diagnosis Result:</h2>
-          <p id="diagnosis-score">After submission the model's diagnosis will show up here.</p>
-          <p id="feedback-message"></p>
-          
+          <p id="diagnosis-score">
+            After submission the model's diagnosis will show up here.
+          </p>
+          <div class="w-75 w3-center">
+            <div id="spinner-prediction" class="visually-hidden position-absolute spinner-border text-primary" role="status" style="height: 5rem; width:5rem;">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <p id="feedback-message">
+            </div>
+          </p>
         </div>
       </div>
     </div>
