@@ -113,3 +113,8 @@ body {
 	  linear-gradient(50deg, rgba(0,0,255,1), rgba(0,0,0,0));
   
 }
+
+.card {
+  --bs-card-border-color: rgba(0,0,0,0);
+  --bs-card-bg: rgb(0,0,0)
+}
