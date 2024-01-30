@@ -57,7 +57,7 @@ body {
 .btn-change6 {
   box-shadow: 0 0 1px #ccc;
   -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s; 
+  transition-duration: 0.2s;
   -webkit-transition-timing-function: linear;
   transition-timing-function: linear;
   box-shadow: 0px 0 0 #31708f inset;
@@ -93,7 +93,6 @@ body {
   text-decoration: none;
 }
 
-
 .shadow-custom-sm {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
@@ -106,15 +105,75 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.gradient/* resulting css */ {
+  background: linear-gradient(50deg, rgba(0, 0, 255, 1), rgba(0, 0, 0, 0));
+}
 
-.gradient/* resulting css */
-{
-  background: 
-	  linear-gradient(50deg, rgba(0,0,255,1), rgba(0,0,0,0));
-  
+.gradient-animation{
+  background-size: 180% 180%;
+  animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero {
+  background-attachment: fixed;
+  padding: 128px 16px;
+  height: 75vh;
 }
 
 .card {
-  --bs-card-border-color: rgba(0,0,0,0);
-  --bs-card-bg: rgb(0,0,0)
+  --bs-card-border-color: rgba(0, 0, 0, 0);
+  --bs-card-bg: rgb(0, 0, 0);
+}
+
+.expand-fill {
+  height: 90vh;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #106eea;
+  border-top-color: #e2eefd;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
