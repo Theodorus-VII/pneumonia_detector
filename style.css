@@ -20,6 +20,9 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
+  background-attachment: fixed;
+  padding: 128px 16px;
+  height: 75vh;
 }
 
 .hero-text {
@@ -124,12 +127,6 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
-
-.hero {
-  background-attachment: fixed;
-  padding: 128px 16px;
-  height: 75vh;
 }
 
 .card {
