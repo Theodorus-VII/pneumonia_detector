@@ -117,3 +117,8 @@ input[type="file"] {
     opacity: 1;
   }
 }
+
+#img-file-preview{
+  max-height: 100%;
+  max-width: 100%;
+}

@@ -25,6 +25,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script type="module" src="script.js"></script>
+
+    <!-- animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- animate on scroll library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </head>
 
   <body class="container-fluid m-0 p-0">
@@ -48,67 +62,7 @@
       </div>
     </nav>
 
-    <div class="container-fluid my-5 p-5 d-flex flex-column">
-      <h1 class="w3-center h1">How the tool works</h1>
-      <div
-        class="container-fluid w-75 d-flex flex-fill flex-md-row align-items-center justify-content-around"
-      >
-        <div
-          class="card feature border border-dark shadow m-2 h-100 d-flex flex-column"
-          style="width: 33rem"
-        >
-          <img
-            src="./assets/upload_guide.png"
-            class="card-img-top img-fluid img border shadow"
-            alt="..."
-            ,
-          />
-          <div class="card-body">
-            <h3 class="card-title">Upload your chest X-ray</h3>
-            <p class="card-text">
-              You can upload your chest X-ray image in JPG, PNG or JPEG format.
-              The image should be clear and show the entire chest area.
-            </p>
-          </div>
-        </div>
-        <div
-          class="card feature border border-dark shadow m-2"
-          style="width: 33rem"
-        >
-          <img
-            src="./assets/diag.png"
-            class="card-img-top img-fluid border shadow"
-            alt="..."
-          />
-          <div class="card-body">
-            <h3 class="card-title">Get instant results</h3>
-            <p class="card-text">
-              Our AI model will analyze your chest X-ray image and give you a
-              probability score for pneumonia.
-            </p>
-          </div>
-        </div>
-        <div
-          class="card feature border border-dark shadow m-2"
-          style="width: 33rem"
-        >
-          <img
-            src="./assets/feedback_high_guide.png"
-            class="card-img-top img-fluid border shadow"
-            alt="..."
-          />
-          <div class="card-body">
-            <h3 class="card-title">Consult a doctor</h3>
-            <p class="card-text">
-              If you have a high probability of pneumonia, you should consult a
-              doctor as soon as possible.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid mt-5" style="width: 60%">
+    <div class="container-fluid mt-5 pt-5" style="width: 60%">
       <div
         class="diagnosis container-fluid d-flex align-items-center justify-content-around"
       >
@@ -121,7 +75,7 @@
             <b>Ensure the format is 150x150</b> for the best possible results.
           </p>
           <form
-            class="image-form d-flex flex-column align-items-center p-1"
+            class="image-form d-flex flex-column align-items-center justify-content-around p-1"
             id="diagnosis-form"
             onsubmit="predict(this)"
             enctype="multipart/form-data"
@@ -134,7 +88,7 @@
               onchange="readURL(this);"
             />
             <label
-              class="image-form-label w-100 d-flex h-100 align-items-center justify-content-around"
+              class="image-form-label w-100 d-flex h-75 align-items-center justify-content-around"
               for="image-file"
             >
               <h1 class="upload-icon">
@@ -162,14 +116,87 @@
           <p id="diagnosis-score">
             After submission the model's diagnosis will show up here.
           </p>
+          <!-- spinner -->
           <div class="w-75 w3-center">
-            <div id="spinner-prediction" class="visually-hidden position-absolute spinner-border text-primary" role="status" style="height: 5rem; width:5rem;">
-              <span class="visually-hidden">Loading...</span>
+            <div
+              id="spinner-prediction"
+              class="visually-hidden position-absolute spinner-border text-primary"
+              role="status"
+              style="height: 5rem; width: 5rem"
+            >
+              <span class="visually-hidden p-5">Loading...</span>
             </div>
           </div>
-          <p id="feedback-message">
-            </div>
-          </p>
+          <p id="feedback-message"></p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="container-fluid my-5 p-5 d-flex flex-column bg-light"
+      data-aos="fade-up"
+    >
+      <h1 class="w3-center h1">How the tool works</h1>
+      <div
+        class="container-fluid w-75 d-flex flex-fill flex-md-row align-items-center justify-content-around"
+      >
+        <div
+          class="card feature border border-dark shadow m-2 h-100 d-flex flex-column"
+          style="width: 33rem"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <img
+            src="./assets/upload_guide.png"
+            class="card-img-top img-fluid img border shadow"
+            alt="..."
+            ,
+          />
+          <div class="card-body">
+            <h3 class="card-title">Upload your chest X-ray</h3>
+            <p class="card-text">
+              You can upload your chest X-ray image in JPG, PNG or JPEG format.
+              The image should be clear and show the entire chest area.
+            </p>
+          </div>
+        </div>
+        <div
+          class="card feature border border-dark shadow m-2"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          style="width: 33rem"
+        >
+          <img
+            src="./assets/diag.png"
+            class="card-img-top img-fluid border shadow"
+            alt="..."
+          />
+          <div class="card-body">
+            <h3 class="card-title">Get instant results</h3>
+            <p class="card-text">
+              Our AI model will analyze your chest X-ray image and give you a
+              probability score for pneumonia.
+            </p>
+          </div>
+        </div>
+        <div
+          class="card feature border border-dark shadow m-2"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          style="width: 33rem"
+        >
+          <img
+            src="./assets/feedback_high_guide.png"
+            class="card-img-top img-fluid border shadow"
+            alt="..."
+          />
+          <div class="card-body">
+            <h3 class="card-title">Consult a doctor</h3>
+            <p class="card-text">
+              If you have a high probability of pneumonia, you should consult a
+              doctor as soon as possible.
+            </p>
+          </div>
         </div>
       </div>
     </div>

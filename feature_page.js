@@ -130,51 +130,70 @@ async function diagnosisResult(predictedProbability) {
   var feedback = RESPONSES[feedbackIndex];
 
   // Display the feedback message and download link
-  feedbackMessage.textContent = feedback;
-  feedbackMessage.classList.add("bg-dark");
-  feedbackMessage.classList.add("p-5");
-  feedbackMessage.classList.add("rounded");
-  feedbackMessage.classList.add("text-light");
-  feedbackMessage.classList.add("activated");
+  addFeedbackResults(feedback);
+
   diagnosisScore.textContent = "";
 }
 
-function submitForm(event) {
+var form = document.getElementById("diagnosis-form");
+form.addEventListener("submit", (event) => {
   console.log("submitting image...");
-  event.preventDefault();
+  event.preventDefault(); // stop the page from reloading on form submission
 
+  resetFeedbackResults(); // reset currently displayed results
+
+  // display the spinner
   const spinner = document.getElementById("spinner-prediction");
   spinner.classList.toggle("visually-hidden");
+
   var fileInput = document.getElementById("image-file");
   var file = fileInput.files[0];
 
   var reader = new FileReader();
   reader.addEventListener("load", function () {
-    // Get the data URL of the file content
-    var dataURL = reader.result;
-    // Create an image object
-    var image = new Image();
-    // Add an onload event listener
+    var dataURL = reader.result; // Get the data URL of the file content
+
+    var image = new Image(); // Create an image object to hold our image.
+
     image.onload = async function () {
+      // Add an onload event listener
       console.log(image.width, image.height);
       let predictedProbability = await predict(image);
       await diagnosisResult(predictedProbability);
+
+      // remove spinner
       spinner.classList.toggle("visually-hidden");
     };
     image.src = dataURL;
   });
   // Read the file content as a data URL
   reader.readAsDataURL(file);
-}
-var form = document.getElementById("diagnosis-form");
-form.addEventListener("submit", submitForm);
+});
 
-async function singleImagePlot(image) {
-  // useless
-  const canvas = document.createElement("canvas");
-  canvas.width = 28;
-  canvas.height = 28;
-  canvas.style = "margin: 4px;";
-  await tf.browser.toPixels(image, canvas);
-  return canvas;
+function addFeedbackResults(feedback) {
+  const feedbackMessage = document.querySelector("#feedback-message");
+
+  feedbackMessage.classList.add("bg-dark");
+  feedbackMessage.classList.add("p-5");
+  feedbackMessage.classList.add("rounded");
+  feedbackMessage.classList.add("text-light");
+  feedbackMessage.classList.add("activated");
+  feedbackMessage.classList.add("animate__animated");
+  feedbackMessage.classList.add("animate__zoomIn");
+  feedbackMessage.textContent = feedback;
+}
+
+function resetFeedbackResults() {
+  const feedbackMessage = document.querySelector("#feedback-message");
+  const diagnosisScore = document.querySelector("#diagnosis-score");
+
+  feedbackMessage.textContent = "";
+  feedbackMessage.classList.toggle("animate__animated");
+  feedbackMessage.classList.toggle("animate__zoomIn");
+  feedbackMessage.classList.toggle("bg-dark");
+  feedbackMessage.classList.toggle("activated");
+  feedbackMessage.classList.toggle("p-5");
+  feedbackMessage.classList.toggle("rounded");
+  feedbackMessage.classList.toggle("text-light");
+  diagnosisScore.textContent = "";
 }
