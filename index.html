@@ -83,8 +83,8 @@
       data-aos="fade-up"
       data-aos-delay="100"
     >
-      <div class="hero p-5 mx-5 my-3 w-75">
-        <div class="hero-text">
+      <div class="hero p-5 mx-5 my-3 w-75" id="background">
+        <div class="hero-text" >
           <div data-aos="fade-up" data-aos-delay="10">
             <h1>AI-Powered Pneumonia Detector</h1>
             <p>
@@ -160,10 +160,9 @@
             <p class="p-5">
               This project was developed by a group of 3 Software Engineering
               students from <a>Addis Ababa University</a>
-              for a course project. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Blanditiis suscipit provident accusamus itaque
-              quasi quae, facilis dolore natus incidunt ad rem maiores esse
-              obcaecati aliquam animi a vitae nesciunt. Exercitationem.
+              for a course project. We wanted to learn more about machine
+              learning and deep learning, and apply them to a real-world
+              problem.
             </p>
           </div>
         </div>
@@ -194,13 +193,21 @@
             awareness and prompt medical attention.
           </p>
           <p>
-            How It Works: Upload Your X-ray: Simply upload your chest X-ray or
-            scan using our intuitive interface. Our advanced AI system analyzes
-            the images, detecting patterns associated with pneumonia, and
-            provide an instant and clear assessment of your pneumonia risk,
-            empowering you to make informed decisions about your health. Take
-            the first step towards proactive healthcare with this tool. Early
-            detection matters, and we're here to help.
+            Simply upload your chest X-ray or scan using our intuitive
+            interface. Our advanced AI system analyzes the images, detecting
+            patterns associated with pneumonia, and provide an instant and clear
+            assessment of your pneumonia risk, empowering you to make informed
+            decisions about your health. Take the first step towards proactive
+            healthcare with this tool. Early detection matters, and we're here
+            to help.
+          </p>
+          <p class="bg-dark p-5 rounded">
+            <b class="text-danger">
+              However, our system is not a replacement for normal medical
+              diagnosis, and it should not be used as the sole basis for any
+              health decisions. We always recommend that users consult a doctor
+              for professional advice and treatment.
+            </b>
           </p>
         </div>
         <div
@@ -243,6 +250,7 @@
       <div
         class="carousel-inner w3-black bg-gradient py-3 px-1 shadow-custom-lg my-5 d-flex align-items-center"
         style="width: 100%; height: 800px"
+        id="how-to"
       >
         <div class="carousel-item active w-100">
           <div
@@ -256,7 +264,7 @@
               >
                 <div class="col-md-6 m-0 h-100 d-flex justify-content-around">
                   <img
-                    src="./assets/upload_guide.png"
+                    src="./assets/1.png"
                     class="card-img-top m-0 p-0 img img-fluid"
                     style="height: 100%; width: auto"
                     alt="..."
@@ -264,10 +272,10 @@
                 </div>
                 <div class="p-5 col-md-4">
                   <div class="card-body">
-                    <h3 class="h3 card-title text-primary">
+                    <h3 class="h3 mx-2 my-1 card-title">
                       Upload your chest X-ray
                     </h3>
-                    <p class="card-text text-primary">
+                    <p class="card-text">
                       You can upload your chest X-ray image in JPG, PNG or JPEG
                       format. The image should be clear and show the entire
                       chest area.
@@ -291,7 +299,7 @@
               >
                 <div class="col-md-6 m-0 h-100 d-flex justify-content-around">
                   <img
-                    src="./assets/feedback_guide.png"
+                    src="./assets/2.png"
                     class="card-img-top m-0 p-0 img img-fluid"
                     style="height: 100%; width: auto"
                     alt="..."
@@ -299,15 +307,12 @@
                 </div>
                 <div class="col-md-4">
                   <div class="card-body">
-                    <h3 class="h3 card-title text-primary">
-                      Get instant results
-                    </h3>
-                    <p class="card-text text-primary">
+                    <h3 class="h3 mx-2 my-1 card-title">Get instant results</h3>
+                    <p class="card-text">
                       Our AI model will analyze your chest X-ray image and give
                       you a probability score for pneumonia. You will also see a
                       heatmap that highlights the affected areas.
                     </p>
-                    <p class="card-text text-primary"></p>
                   </div>
                 </div>
               </div>
@@ -334,10 +339,16 @@
                 </div>
                 <div class="col-md-4">
                   <div class="card-body">
-                    <h3 class="h3 card-title text-primary">Consult a doctor</h3>
-                    <p class="card-text text-primary">
-                      If you have a high probability of pneumonia, you should
-                      consult a doctor as soon as possible.
+                    <h3 class="h3 mx-2 my-1 card-title">Consult a doctor</h3>
+                    <p>
+                      Based on our testing, our algorithm correctly identifies
+                      pneumonia when it exists
+                      <span class="text-primary font-weight-bold">95%</span> of
+                      the time. If the tool detects that the X-ray has a high
+                      probability of pneumonia,
+                      <span class="text-danger"
+                        >you should consult a doctor as soon as possible.</span
+                      >
                     </p>
                     <p class="card-text text-primary"></p>
                   </div>
@@ -381,13 +392,27 @@
       </div>
     </div>
     <footer class="row p-0 m-0 mt-5 w3-black shadow-custom-sm">
+      <div class="d-flex bg-dark justify-content-center align-items-center fw-bold p-4">
+        <a class="text-decoration-none mx-5 my-2" style="color: white" href="./feature.html"
+          >Try the tool</a
+        >
+        <a class="text-decoration-none mx-5 my-2" style="color: white" href="#background"
+          >Background</a
+        >
+        <a class="text-decoration-none mx-5 my-2" style="color: white" href="./about.html"
+          >About Us</a
+        >
+        <a class="text-decoration-none mx-5 my-2" style="color: white" href="#how-to"
+          >How To</a
+        >
+      </div>
       <div class="d-flex justify-content-around align-items-center fw-bold p-4">
-        <a class="text-decoration-none" style="color: white" href="./index.html"
+        <!-- <a class="text-decoration-none" style="color: white" href="./index.html"
           >Home</a
         >
-        <a class="text-decoration-none" style="color: white" href="#about-us"
+        <a class="text-decoration-none" style="color: white" href="./about.html"
           >About us</a
-        >
+        > -->
       </div>
       <div class="text-center p-1" style="color: white">
         &copy; 2023. All rights reserved.
