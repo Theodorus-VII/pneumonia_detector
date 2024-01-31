@@ -112,7 +112,7 @@ async function predict(imgElement) {
 
 async function diagnosisResult(predictedProbability) {
   // sets the DOM elements to give feedback according to the prediction.
-  const feedbackMessage = document.querySelector("#feedback-message");
+  // const feedbackMessage = document.querySelector("#feedback-message");
   const diagnosisScore = document.querySelector("#diagnosis-score");
 
   var feedbackIndex = responseThresholds
@@ -172,28 +172,31 @@ form.addEventListener("submit", (event) => {
 
 function addFeedbackResults(feedback) {
   const feedbackMessage = document.querySelector("#feedback-message");
+  const feedbackContainer = document.querySelector("#feedback-container");
 
-  feedbackMessage.classList.add("bg-dark");
-  feedbackMessage.classList.add("p-5");
-  feedbackMessage.classList.add("rounded");
-  feedbackMessage.classList.add("text-light");
-  feedbackMessage.classList.add("activated");
-  feedbackMessage.classList.add("animate__animated");
-  feedbackMessage.classList.add("animate__zoomIn");
+  feedbackContainer.classList.add("bg-dark");
+  feedbackContainer.classList.add("p-5");
+  feedbackContainer.classList.add("rounded");
+  feedbackContainer.classList.add("text-light");
+  feedbackContainer.classList.add("activated");
+  feedbackContainer.classList.add("animate__animated");
+  feedbackContainer.classList.add("animate__zoomIn");
   feedbackMessage.textContent = feedback;
 }
 
 function resetFeedbackResults() {
   const feedbackMessage = document.querySelector("#feedback-message");
+  const feedbackContainer = document.querySelector("#feedback-container");
+
   const diagnosisScore = document.querySelector("#diagnosis-score");
 
   feedbackMessage.textContent = "";
-  feedbackMessage.classList.toggle("animate__animated");
-  feedbackMessage.classList.toggle("animate__zoomIn");
-  feedbackMessage.classList.toggle("bg-dark");
-  feedbackMessage.classList.toggle("activated");
-  feedbackMessage.classList.toggle("p-5");
-  feedbackMessage.classList.toggle("rounded");
-  feedbackMessage.classList.toggle("text-light");
+  feedbackContainer.classList.toggle("animate__animated");
+  feedbackContainer.classList.toggle("animate__zoomIn");
+  feedbackContainer.classList.toggle("bg-dark");
+  feedbackContainer.classList.toggle("activated");
+  feedbackContainer.classList.toggle("p-5");
+  feedbackContainer.classList.toggle("rounded");
+  feedbackContainer.classList.toggle("text-light");
   diagnosisScore.textContent = "";
 }

@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="about.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lato"
@@ -53,120 +54,173 @@
         >
       </div>
     </nav>
-
     <div
-      class="about bg-gradient shadow-custom-lg p-5 w-75 mb-0 d-flex w3-center flex-column align-items-center justify-content-around"
+      class="about bg-gradient shadow-custom-lg p-0 w-100 mb-0 d-flex w3-center flex-column align-items-center justify-content-around"
       ,
-      style="background-color: rgb(208, 218, 218)"
+      style="background-color: rgb(200, 206, 206)"
     >
-      <div class="about w-75 d-flex flex-column">
-        <h1 class="h1 p-5">About Us</h1>
-        <div
-          class="topic w-100 d-flex w3-center align-items-center justify-content-around m-3"
-        >
-          <h2 class="h2">What is this project?</h2>
-          <p
-            class="w3-black bg-gradient rounded w-75 w3-center text-light p-5 mx-2"
-            data-aos="fade-left"
-          data-aos-delay="10"
-          >
-            This AI-Powered Pneumonia Diagnosis tool is a web-based application
-            that uses artificial intelligence to assist in the diagnosis of
-            pneumonia from chest radiography (X-rays). Pneumonia is a serious
-            lung infection that can affect anyone, especially children, elderly,
-            and people with weak immune systems. It can cause fever, cough,
-            difficulty breathing, and even death. According to the World Health
-            Organization, pneumonia is the leading cause of death among children
-            under five years old, killing more than 800,000 children
-            <a
-              class="link-primary"
-              href="https://www.who.int/news-room/fact-sheets/detail/pneumonia"
-              >every year</a
-            >. Therefore, early and accurate diagnosis of pneumonia is crucial
-            for effective treatment and prevention.
+      <section
+        class="header d-flex justify-content-around align-items-center w-100 gradient-animation w3-container w3-center"
+      >
+        <div class="container-fluid text-shadow mt-5 flex-column">
+          <p class="text-lg" data-aos="zoom-out" data-aos-delay="50"></p>
+          <h1 class="h1">About Us</h1>
+          <p class="font-italic mt-5 text-primary">
+            <a class="link-danger font-italic text-decoration-italic" href="#disclaimer">Disclaimer</a>
           </p>
         </div>
+      </section>
+      <div class="about p-5 mx-5 w-75 d-flex flex-column">
         <div
-          class="topic w-100 d-flex w3-center align-items-center justify-content-around m-3"
+          class="spacer container-fluid w-100 p-0 m-0"
+          style="height: 10vh"
+        ></div>
+
+        <!-- what is this project -->
+        <div
+          class="topic w-100 shadow-lg p-0 m-5 rounded d-flex align-items-center justify-content-around m-3"
         >
-          <p
-            class="w3-black bg-gradient rounded w-75 w3-center text-light p-5 mx-2"
-            data-aos="fade-right"
-          data-aos-delay="20"
+          <h2 class="h2 col-md-4">What is this project?</h2>
+          <div
+            class="col-md-8 mx-0 container-fluid p-5 d-flex justify-content-around h-100 w3-black rounded"
           >
-            We are three students who created this project as part of a
-            University Project. We wanted to learn more about machine learning
-            and deep learning, and apply them to a real-world problem.
-          </p>
-          <h2 class="h2">Who are we?</h2>
-        </div>
-        <div
-          class="topic w-100 d-flex w3-center align-items-center justify-content-around m-3"
-        >
-          <h2 class="h2">How did we make it?</h2>
-          <p
-            class="w3-black bg-gradient rounded w-75 w3-center text-light p-5 mx-2"
-            data-aos="fade-left"
-          data-aos-delay="10"
-          >
-            We used Python and TensorFlow to train our model on an
-            <a
-              class="link-primary"
-              href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia"
-              >open source dataset</a
-            >
-            of 5863 chest X-ray images, labeled into two categories: pneumonia
-            and normal. We used a convolutional neural network (CNN)
-            architecture to build our pneumonia detection system. As part of the
-            integration into a web-app, we also used TensorFlow.js to run our
-            model in the browser, ensuring privacy and accessibility for our
-            users. No data is sent to a server, and the model and prediction are
-            run locally directly in the browser. The code for our project is
-            also open source and is available on
-            <a class="link-primary" href="">GitHub</a>.
-          </p>
-        </div>
-        <div
-          class="container-fluid topic w-100 d-flex w3-center align-items-center justify-content-around m-3"
-        >
-          <div class="d-flex flex-column col-9">
             <p
-              class="w3-black bg-gradient rounded w-100 w3-center text-light p-5 mx-2"
-              data-aos="fade-right"
-          data-aos-delay="20"
+              class="w-75 w3-center text-light p-5 mx-2"
+              data-aos="fade-left"
+              data-aos-delay="10"
             >
-              Pneumonia is a common and potentially serious lung infection that
-              can affect people of all ages. It is usually diagnosed by a doctor
-              based on the patient's symptoms, medical history, physical
-              examination, and chest X-ray. However,
-              <em>diagnosing pneumonia can be challenging</em>, especially in
-              low-resource settings where access to medical facilities and
-              equipment is limited. Moreover, chest X-ray images can be
-              difficult to interpret, and different radiologists may sometimes
-              have different opinions on the final diagnosis.
-            </p>
-            <p
-              class="w3-black bg-gradient rounded w-100 w3-center text-light p-5 mx-2"
-              data-aos="fade-right"
-          data-aos-delay="100"
-            >
-              That is why we think that an AI system can be a useful tool for
-              assisting doctors in diagnosing pneumonia. Our system can analyze
-              chest X-ray images and give a probability score for pneumonia.
-              This can help doctors add another layer of security to their
-              diagnosis, and avoid false negatives.
+              This AI-Powered Pneumonia Diagnosis tool is a web-based
+              application that uses artificial intelligence to assist in the
+              diagnosis of pneumonia from chest radiography (X-rays). Pneumonia
+              is a serious lung infection that can affect anyone, especially
+              children, elderly, and people with weak immune systems. It can
+              cause fever, cough, difficulty breathing, and even death.
+              According to the World Health Organization, pneumonia is the
+              leading cause of death among children under five years old,
+              killing more than 800,000 children
+              <a
+                class="link-primary"
+                href="https://www.who.int/news-room/fact-sheets/detail/pneumonia"
+                >every year</a
+              >. Therefore, early and accurate diagnosis of pneumonia is crucial
+              for effective treatment and prevention.
             </p>
           </div>
-          <h2 class="h2 p-2 col-3 mx-2">Why did we make it?</h2>
         </div>
+
+        <!-- who are we -->
         <div
-          class="w3-center container-fluid d-flex flex-column justify-content-around align-items-center my-5"
+          class="topic w-100 shadow-lg p-0 m-5 rounded d-flex align-items-center justify-content-around m-3"
+        >
+          <h2 class="h2 col-md-4">Who are we?</h2>
+          <div
+            class="col-md-8 mx-0 container-fluid p-5 d-flex justify-content-around h-100 w3-black rounded"
+          >
+            <p
+              class="w-75 w3-center text-light p-5 mx-2"
+              data-aos="fade-right"
+              data-aos-delay="20"
+            >
+              We are three students who created this project as part of a
+              University Project. We wanted to learn more about machine learning
+              and deep learning, and apply them to a real-world problem.
+            </p>
+          </div>
+        </div>
+
+        <!-- how did we make it -->
+        <div
+          class="topic w-100 shadow-lg p-0 m-5 rounded d-flex align-items-center justify-content-around m-3"
+        >
+          <h2 class="h2 col-md-4">How did we make it?</h2>
+          <div
+            class="col-md-8 mx-0 container-fluid p-5 d-flex justify-content-around h-100 w3-black rounded"
+          >
+            <p
+              class="w-75 w3-center text-light p-5 mx-2"
+              data-aos="fade-left"
+              data-aos-delay="10"
+            >
+              We used Python and TensorFlow to train our model on an
+              <a
+                class="link-primary"
+                href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia"
+                >open source dataset</a
+              >
+              of 5863 chest X-ray images, labeled into two categories: pneumonia
+              and normal. We used a convolutional neural network (CNN)
+              architecture to build our pneumonia detection system. As part of
+              the integration into a web-app, we also used TensorFlow.js to run
+              our model in the browser, ensuring privacy and accessibility for
+              our users. No data is sent to a server, and the model and
+              prediction are run locally directly in the browser. The code for
+              our project is also open source and is available on
+              <a class="link-primary" href="">GitHub</a>.
+            </p>
+          </div>
+        </div>
+
+        <!-- why did we make it -->
+        <div
+          class="topic w-100 shadow-lg p-0 m-5 rounded d-flex align-items-center justify-content-around m-3"
+        >
+          <h2 class="h2 col-md-4">Why did we make it?</h2>
+          <div class="d-flex m-0 flex-column col-md-8 bg-dark bg-gradient">
+            <div
+              class="mb-2 container-fluid p-5 d-flex justify-content-around h-100 w3-black rounded"
+            >
+              <p
+                class="w-75 w3-center text-light p-5 mx-2"
+                data-aos="fade-right"
+                data-aos-delay="20"
+              >
+                Pneumonia is a common and potentially serious lung infection
+                that can affect people of all ages. It is usually diagnosed by a
+                doctor based on the patient's symptoms, medical history,
+                physical examination, and chest X-ray. However,
+                <em class="text-danger"
+                  >diagnosing pneumonia can be challenging</em
+                >, especially in low-resource settings where access to medical
+                facilities and equipment is limited. Moreover, chest X-ray
+                images can be difficult to interpret, and different radiologists
+                may sometimes have different opinions on the final diagnosis.
+              </p>
+            </div>
+            <div
+              class="mt-2 container-fluid p-5 d-flex justify-content-around h-100 w3-black rounded"
+            >
+              <p
+                class="w-75 w3-center text-light p-5 mx-2"
+                data-aos="fade-right"
+                data-aos-delay="100"
+              >
+                That is why we think that an AI system can be a useful tool for
+                assisting doctors in diagnosing pneumonia. Our system can
+                analyze chest X-ray images and give a probability score for
+                pneumonia. This can help doctors add another layer of security
+                to their diagnosis, and avoid false negatives.
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div
+        class="w3-center container-fluid w-100 d-flex flex-column justify-content-around align-items-center my-5"
+        id="disclaimer"
+      >
+        <h1 class="text-danger h1 font-bold">DISCLAIMER</h1>
+        <div
+          class="d-flex align-items-center justify-content-around w3-black p-5 rounded shadow-custom-lg m-5"
+          style="width: 100vw"
         >
           <p
-            class="w3-black bg-gradient rounded w-75 w3-center mb-5 p-5 mx-2"
-            data-aos="fade-left"
-          data-aos-delay="20"
+            class="w3-black rounded w3-center p-5 m-2 w-50"
+            data-aos="zoom-in"
+            data-aos-delay="20"
           >
+            The system <b>can</b> accurately identify pneumonia cases around
+            <span class="text-danger">90%</span> of the time, <br />
             <b class="text-danger">
               However, our system is not a replacement for normal medical
               diagnosis, and it should not be used as the sole basis for any
@@ -174,10 +228,14 @@
               for professional advice and treatment.
             </b>
           </p>
+        </div>
+        <div
+          class="d-flex flex-column align-items-center justify-content-around w3-black p-5 rounded shadow-custom-lg m-5"
+          style="width: 100vw"
+        >
           <p
-            class="w3-black bg-gradient rounded w-50 mt-5 w3-center text-light p-5 mx-2"
-            data-aos="fade-right"
-          data-aos-delay="20"
+            class="w3-black rounded w3-center p-5 m-2 w-25"
+            data-aos="zoom-out"
           >
             We hope that our project can help people who are at risk of
             pneumonia, especially in developing countries where access to
@@ -185,35 +243,34 @@
             project can inspire other students and developers to use AI for
             social good.
           </p>
+          <p>
+            All code and resources for the project can be found at:
+          </p>
+          <a class="link-primary" href="https://github.com/Theodorus-VII/pneumonia_detector">Github</a>
+          <p class="mt-5 p-5 text-primary">Thank you for using the website!</p>
         </div>
       </div>
     </div>
 
-    <div class="w-100">
-      <footer class="row p-0 m-0 w3-black">
-        <div
-          class="d-flex justify-content-around align-items-center fw-bold p-4"
+    <footer class="row p-0 m-0 w-100 mt-5 w3-black shadow-custom-sm">
+      <div class="d-flex justify-content-around align-items-center fw-bold p-4">
+        <a class="text-decoration-none" style="color: white" href="./index.html"
+          >Home</a
         >
-          <a
-            class="text-decoration-none"
-            style="color: white"
-            href="./index.html"
-            >Home</a
-          >
-          <a class="text-decoration-none" style="color: white" href="#about-us"
-            >About us</a
-          >
-          <a
-            class="text-decoration-none"
-            style="color: white"
-            href="#contact-us"
-            >Contact</a
-          >
-        </div>
-        <div class="text-center py-3" style="color: white">
-          &copy; 2023. All rights reserved.
-        </div>
-      </footer>
-    </div>
+        <a class="text-decoration-none" style="color: white" href="#about-us"
+          >About us</a
+        >
+      </div>
+      <div class="text-center p-1" style="color: white">
+        &copy; 2023. All rights reserved.
+      </div>
+    </footer>
+
+    <div id="preloader"></div>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
   </body>
 </html>

@@ -15,6 +15,7 @@ body {
   height: 100px;
 }
 
+
 .hero {
   display: flex;
   align-items: center;
@@ -23,6 +24,27 @@ body {
   background-attachment: fixed;
   padding: 128px 16px;
   height: 75vh;
+}
+
+.gradient/* resulting css */ {
+  background: linear-gradient(50deg, rgba(0, 0, 255, 1), rgba(0, 0, 0, 0));
+}
+
+.gradient-animation{
+  background-size: 180% 180%;
+  animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .hero-text {
@@ -106,27 +128,6 @@ body {
 
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.gradient/* resulting css */ {
-  background: linear-gradient(50deg, rgba(0, 0, 255, 1), rgba(0, 0, 0, 0));
-}
-
-.gradient-animation{
-  background-size: 180% 180%;
-  animation: gradient-animation 15s ease infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .card {

@@ -98,11 +98,11 @@ input[type="file"] {
   opacity: 1;
 }
 
-#feedback-message {
+#feedback-container {
   opacity: 0;
 }
 
-#feedback-message.activated {
+#feedback-container.activated {
   opacity: 1;
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
@@ -121,4 +121,10 @@ input[type="file"] {
 #img-file-preview{
   max-height: 100%;
   max-width: 100%;
+}
+
+#spinner-prediction{
+  position: relative;
+  left: 45%;
+  top: 45%;
 }

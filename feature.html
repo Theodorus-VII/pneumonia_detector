@@ -116,94 +116,104 @@
           <p id="diagnosis-score">
             After submission the model's diagnosis will show up here.
           </p>
-          <!-- spinner -->
-          <div class="w-75 w3-center">
+          <div
+            id="feedback-container"
+            class="container-fluid d-flex flex-column w3-center h-100"
+          >
             <div
               id="spinner-prediction"
-              class="visually-hidden position-absolute spinner-border text-primary"
+              class="visually-hidden spinner-border text-light"
               role="status"
-              style="height: 5rem; width: 5rem"
             >
-              <span class="visually-hidden p-5">Loading...</span>
+              <span class="sr-only">Loading...</span>
             </div>
+            <p id="feedback-message"></p>
           </div>
-          <p id="feedback-message"></p>
         </div>
       </div>
     </div>
 
     <div
-      class="container-fluid my-5 p-5 d-flex flex-column bg-light"
+      class="container-fluid my-5 p-5 d-flex flex-column text-light w3-black"
       data-aos="fade-up"
     >
       <h1 class="w3-center h1">How the tool works</h1>
       <div
-        class="container-fluid w-75 d-flex flex-fill flex-md-row align-items-center justify-content-around"
+        class="container-fluid text-dark w-75 d-flex flex-fill flex-md-row align-items-center justify-content-around"
       >
-        <div
-          class="card feature border border-dark shadow m-2 h-100 d-flex flex-column"
-          style="width: 33rem"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <img
-            src="./assets/upload_guide.png"
-            class="card-img-top img-fluid img border shadow"
-            alt="..."
-            ,
-          />
-          <div class="card-body">
-            <h3 class="card-title">Upload your chest X-ray</h3>
-            <p class="card-text">
-              You can upload your chest X-ray image in JPG, PNG or JPEG format.
-              The image should be clear and show the entire chest area.
-            </p>
+        <div class="m-5 h-100" style="width: 30rem">
+          <div
+            class="card feature border border-dark shadow m-2 h-100 d-flex flex-column"
+            style="width: 33rem"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="./assets/upload_guide.png"
+              class="card-img-top img-fluid img border shadow"
+              alt="..."
+              ,
+            />
+            <div class="card-body">
+              <h3 class="card-title">Upload your chest X-ray</h3>
+              <p class="card-text px-5">
+                You can upload your chest X-ray image in JPG, PNG or JPEG
+                format. The image should be clear and show the entire chest
+                area.
+              </p>
+            </div>
           </div>
         </div>
-        <div
-          class="card feature border border-dark shadow m-2"
-          data-aos="fade-up"
-          data-aos-delay="200"
-          style="width: 33rem"
-        >
-          <img
-            src="./assets/diag.png"
-            class="card-img-top img-fluid border shadow"
-            alt="..."
-          />
-          <div class="card-body">
-            <h3 class="card-title">Get instant results</h3>
-            <p class="card-text">
-              Our AI model will analyze your chest X-ray image and give you a
-              probability score for pneumonia.
-            </p>
+        <div class="m-5 h-100" style="width: 30rem">
+          <div
+            class="card feature border border-dark shadow m-2"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            style="width: 33rem"
+          >
+            <img
+              src="./assets/diag.png"
+              class="card-img-top img-fluid border shadow"
+              alt="..."
+            />
+            <div class="card-body">
+              <h3 class="card-title">Get instant results</h3>
+              <p class="card-text px-5 py-2">
+                Our AI model will analyze your chest X-ray image and give you a
+                probability score for pneumonia.
+              </p>
+            </div>
           </div>
         </div>
-        <div
-          class="card feature border border-dark shadow m-2"
-          data-aos="fade-up"
-          data-aos-delay="300"
-          style="width: 33rem"
-        >
-          <img
-            src="./assets/feedback_high_guide.png"
-            class="card-img-top img-fluid border shadow"
-            alt="..."
-          />
-          <div class="card-body">
-            <h3 class="card-title">Consult a doctor</h3>
-            <p class="card-text">
-              If you have a high probability of pneumonia, you should consult a
-              doctor as soon as possible.
-            </p>
+        <div class="m-5 h-100" style="width: 30rem">
+          <div
+            class="card feature border border-dark shadow m-2"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            style="width: 33rem"
+          >
+            <img
+              src="./assets/feedback_high_guide.png"
+              class="card-img-top img-fluid border shadow"
+              alt="..."
+            />
+            <div class="card-body">
+              <h3 class="card-title">Consult a doctor</h3>
+              <p class="card-text px-5 py-2">
+                If you have a high probability of pneumonia, you should consult
+                a doctor as soon as possible.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    
+    <div class="d-flex w-100 align-items-center justify-content-around">
+      <p>To learn more, visit <a class="link-primary" href="./about.html">the <b>About Us</b> page</a></p>
+    </div>
 
-    <div class="d-flex flex-column"></div>
-
-    <footer class="row p-0 m-0 bg-dark mt-5">
+    <footer class="row p-0 m-0 mt-5 w3-black shadow-custom-sm">
       <div class="d-flex justify-content-around align-items-center fw-bold p-4">
         <a class="text-decoration-none" style="color: white" href="./index.html"
           >Home</a
@@ -211,13 +221,17 @@
         <a class="text-decoration-none" style="color: white" href="#about-us"
           >About us</a
         >
-        <a class="text-decoration-none" style="color: white" href="#contact-us"
-          >Contact</a
-        >
       </div>
       <div class="text-center p-1" style="color: white">
         &copy; 2023. All rights reserved.
       </div>
     </footer>
+
+    <div id="preloader"></div>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
   </body>
 </html>
