@@ -1,159 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI-Powered Pneumonia Detector</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Lato"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script type="module" src="script.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Powered Pneumonia Detector</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- animate.css -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <!-- animate on scroll library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </head>
+  <script type="module" src="script.js"></script>
 
-  <body class="container-fluid m-0 p-0">
-    <nav class="w3-top">
-      <div class="w3-bar w3-black w3-card">
-        <a
-          class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
-          href="javascript:void(0)"
-          onclick="myFunction()"
-          title="Toggle Navigation Menu"
-          ><i class="fa fa-bars"></i
-        ></a>
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large"
-          >HOME</a
-        >
-        <a
-          href="about.html"
-          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
-          >ABOUT</a
-        >
-      </div>
-    </nav>
+  <!-- animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- animate on scroll library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</head>
 
-    <section
-      class="gradient gradient-animation hero w3-container w3-purple w3-center shadow-lg"
-    >
-      <div class="container-fluid text-shadow mt-5 flex-column">
-        <p class="text-lg" data-aos="zoom-out" data-aos-delay="50">
-          Have an X-ray you want to check,
-        </p>
-        <h1
-          class="animate__animated animate__fadeInLeft"
-        >
-          try the tool for free now!
-        </h1>
-        <a
-          href="feature.html"
-          class="hero-button"
-          data-aos="zoom-out"
-          data-aos-delay="150"
-          >START DIAGNOSIS</a
-        >
-      </div>
-    </section>
+<body class="container-fluid m-0 p-0">
+  <nav class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+      <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+    </div>
+  </nav>
 
-    <div
-      class="container-fluid m-0 p-0 d-flex flex-column align-items-center justify-content-around"
-      data-aos="fade-up"
-      data-aos-delay="100"
-    >
-      <div class="hero p-5 mx-5 my-3 w-75" id="background">
-        <div class="hero-text">
-          <div data-aos="fade-up" data-aos-delay="10">
-            <h1>AI-Powered Pneumonia Detector</h1>
-            <p>
-              The AI-Powered Pneumonia Detector is a web application that uses
-              artificial intelligence to diagnose pneumonia from chest
-              radiography. It is fast, accurate, and easy to use.
-            </p>
-          </div>
-          <div data-aos="fade-up" data-aos-delay="50">
-            <h2>What is Pneumonia?</h2>
-            <p>
-              Pneumonia is an inflammatory condition of the lung affecting
-              primarily the small air sacs known as alveoli. Symptoms typically
-              include some combination of productive or dry cough, chest pain,
-              fever and difficulty breathing. The severity of the condition is
-              variable. Pneumonia is usually caused by infection with viruses or
-              bacteria and less commonly by other microorganisms, certain
-              medications or conditions such as autoimmune diseases.
-            </p>
-          </div>
-          <p data-aos="fade-up" data-aos-delay="10">
-            For more information, visit:
-            <a
-              href="https://www.nhlbi.nih.gov/health/pneumonia"
-              data-aos="fade-up"
-              data-aos-delay="500"
-              >https://www.nhlbi.nih.gov/health/pneumonia</a
-            >
+  <section class="gradient gradient-animation hero w3-container w3-purple w3-center shadow-lg">
+    <div class="container-fluid text-shadow mt-5 flex-column">
+      <p class="text-lg" data-aos="zoom-out" data-aos-delay="50">
+        Have an X-ray you want to check,
+      </p>
+      <h1 class="animate__animated animate__fadeInLeft">
+        try the tool for free now!
+      </h1>
+      <a href="feature.html" class="hero-button" data-aos="zoom-out" data-aos-delay="150">START DIAGNOSIS</a>
+    </div>
+  </section>
+
+  <div class="container-fluid m-0 p-0 d-flex flex-column align-items-center justify-content-around" data-aos="fade-up" data-aos-delay="100">
+    <div class="hero p-5 mx-5 my-3 w-75" id="background">
+      <div class="hero-text">
+        <div data-aos="fade-up" data-aos-delay="10">
+          <h1>AI-Powered Pneumonia Detector</h1>
+          <p>
+            The AI-Powered Pneumonia Detector is a web application that uses
+            artificial intelligence to diagnose pneumonia from chest
+            radiography. It is fast, accurate, and easy to use.
           </p>
         </div>
-        <div class="hero-image">
-          <img
-            class="img"
-            src="https://www.nhlbi.nih.gov/sites/default/files/inline-images/pneumonia.png"
-            alt="Hero image"
-          />
-          <span class="fw-bold"
-            >source:
-            <a href="https://www.nhlbi.nih.gov/health/pneumonia"
-              >https://www.nhlbi.nih.gov/health/pneumonia</a
-            ></span
-          >
+        <div data-aos="fade-up" data-aos-delay="50">
+          <h2>What is Pneumonia?</h2>
+          <p>
+            Pneumonia is an inflammatory condition of the lung affecting
+            primarily the small air sacs known as alveoli. Symptoms typically
+            include some combination of productive or dry cough, chest pain,
+            fever and difficulty breathing. The severity of the condition is
+            variable. Pneumonia is usually caused by infection with viruses or
+            bacteria and less commonly by other microorganisms, certain
+            medications or conditions such as autoimmune diseases.
+          </p>
         </div>
+        <p data-aos="fade-up" data-aos-delay="10">
+          For more information, visit:
+          <a href="https://www.nhlbi.nih.gov/health/pneumonia" data-aos="fade-up" data-aos-delay="500">https://www.nhlbi.nih.gov/health/pneumonia</a>
+        </p>
       </div>
-      <div
-        id="about-us"
-        class="col-12 d-flex flex-sm-row flex-column position-relative w3-black text-light shadow-lg m-5 rounded align-items-center justify-content-around"
-        style="background-color: rgb(209, 209, 209); min-height: 420px"
-        data-aos="fade-right"
-        data-aos-delay="10"
-      >
-        <div
-          class="col-sm-8 col-12 text-start p-5 m-2 d-flex align-items-center"
-          style="color: rgb(230, 230, 230); font-size: 1.4rem"
-        >
-          <div
-            class="col-12 col-md-6 display-6 font-weight-bold text-center mt-0 mb-2 fw-bolder"
-          >
-            Who we are
-          </div>
-          <div
-            class="text-justify ps-4"
-            style="
+      <div class="hero-image">
+        <img class="img" src="https://www.nhlbi.nih.gov/sites/default/files/inline-images/pneumonia.png" alt="Hero image" />
+        <span class="fw-bold">source:
+          <a href="https://www.nhlbi.nih.gov/health/pneumonia">https://www.nhlbi.nih.gov/health/pneumonia</a></span>
+      </div>
+    </div>
+    <div id="about-us" class="col-12 d-flex flex-sm-row flex-column position-relative w3-black text-light shadow-lg m-5 rounded align-items-center justify-content-around" style="background-color: rgb(209, 209, 209); min-height: 420px" data-aos="fade-right" data-aos-delay="10">
+      <div class="col-sm-8 col-12 text-start p-5 m-2 d-flex align-items-center" style="color: rgb(230, 230, 230); font-size: 1.4rem">
+        <div class="col-12 col-md-6 display-6 font-weight-bold text-center mt-0 mb-2 fw-bolder">
+          Who we are
+        </div>
+        <div class="text-justify ps-4" style="
               font-size: medium;
               width: 60%;
               @media (max-width: 768px) {
@@ -161,28 +93,20 @@
                 width: 90%;
                 padding: 0;
               }
-            "
-          >
-            <p class="p-5">
-              This project was developed by a group of 3 Software Engineering
-              students from <a>Addis Ababa University</a>
-              for a course project. We wanted to learn more about machine
-              learning and deep learning, and apply them to a real-world
-              problem.
-            </p>
-          </div>
+            ">
+          <p class="p-5">
+            This project was developed by a group of 3 Software Engineering
+            students from <a>Addis Ababa University</a>
+            for a course project. We wanted to learn more about machine
+            learning and deep learning, and apply them to a real-world
+            problem.
+          </p>
         </div>
       </div>
+    </div>
 
-      <div
-        class="col-sm-8 col-12 text-center p-5 m-2 d-flex align-items-center"
-        style="color: rgb(230, 230, 230); font-size: 1.4rem"
-        data-aos="fade-left"
-        data-aos-delay="30"
-      >
-        <div
-          class="text-start text-dark ps-4"
-          style="
+    <div class="col-sm-8 col-12 text-center p-5 m-2 d-flex align-items-center" style="color: rgb(230, 230, 230); font-size: 1.4rem" data-aos="fade-left" data-aos-delay="30">
+      <div class="text-start text-dark ps-4" style="
             font-size: medium;
             width: 60%;
             @media (max-width: 768px) {
@@ -190,260 +114,158 @@
               width: 90%;
               padding: 0;
             }
-          "
-        >
-          <p>
-            This website is a dedicated online resource for quick and reliable
-            pneumonia assessments. Our AI-driven tool is designed to assist you
-            in identifying potential signs of pneumonia, allowing for early
-            awareness and prompt medical attention.
-          </p>
-          <p>
-            Simply upload your chest X-ray or scan using our intuitive
-            interface. Our advanced AI system analyzes the images, detecting
-            patterns associated with pneumonia, and provide an instant and clear
-            assessment of your pneumonia risk, empowering you to make informed
-            decisions about your health. Take the first step towards proactive
-            healthcare with this tool. Early detection matters, and we're here
-            to help.
-          </p>
-          <p class="bg-dark p-5 rounded">
-            <b class="text-danger">
-              However, our system is not a replacement for normal medical
-              diagnosis, and it should not be used as the sole basis for any
-              health decisions. We always recommend that users consult a doctor
-              for professional advice and treatment.
-            </b>
-          </p>
-        </div>
-        <div
-          class="col-12 col-md-6 display-6 font-weight-bold text-center mt-0 mb-2 fw-bolder text-dark"
-        >
-          What the tool does
-        </div>
+          ">
+        <p>
+          This website is a dedicated online resource for quick and reliable
+          pneumonia assessments. Our AI-driven tool is designed to assist you
+          in identifying potential signs of pneumonia, allowing for early
+          awareness and prompt medical attention.
+        </p>
+        <p>
+          Simply upload your chest X-ray or scan using our intuitive
+          interface. Our advanced AI system analyzes the images, detecting
+          patterns associated with pneumonia, and provide an instant and clear
+          assessment of your pneumonia risk, empowering you to make informed
+          decisions about your health. Take the first step towards proactive
+          healthcare with this tool. Early detection matters, and we're here
+          to help.
+        </p>
+        <p class="bg-dark p-5 rounded">
+          <b class="text-danger">
+            However, our system is not a replacement for normal medical
+            diagnosis, and it should not be used as the sole basis for any
+            health decisions. We always recommend that users consult a doctor
+            for professional advice and treatment.
+          </b>
+        </p>
+      </div>
+      <div class="col-12 col-md-6 display-6 font-weight-bold text-center mt-0 mb-2 fw-bolder text-dark">
+        What the tool does
       </div>
     </div>
+  </div>
 
-    <div
-      id="my_shiny_carousel"
-      class="carousel slide"
-      data-bs-ride="carousel"
-      data-aos="fade-up"
-    >
-      <!-- Indicators/dots -->
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#my_shiny_carousel"
-          data-bs-slide-to="0"
-          class="active bg-primary"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#my_shiny_carousel"
-          data-bs-slide-to="1"
-          class="bg-primary"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#my_shiny_carousel"
-          data-bs-slide-to="2"
-          class="bg-primary"
-        ></button>
-      </div>
+  <div id="my_shiny_carousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#my_shiny_carousel" data-bs-slide-to="0" class="active bg-primary"></button>
+      <button type="button" data-bs-target="#my_shiny_carousel" data-bs-slide-to="1" class="bg-primary"></button>
+      <button type="button" data-bs-target="#my_shiny_carousel" data-bs-slide-to="2" class="bg-primary"></button>
+    </div>
 
-      <!-- The slideshow/carousel -->
-      <div
-        class="carousel-inner w3-black bg-gradient py-3 px-1 shadow-custom-lg my-5 d-flex align-items-center"
-        style="width: 100%; height: 800px"
-        id="how-to"
-      >
-        <div class="carousel-item active w-100">
-          <div
-            class="d-flex align-items-center justify-content-around w-100 h-100 m-5 p-5"
-            style="height: 700px"
-          >
-            <div class="mb-3 h-100">
-              <div
-                class="d-flex align-items-center justify-content-center w3-black bg-gradient h-100 w-100"
-                style="border: black"
-              >
-                <div class="col-md-6 m-0 h-100 d-flex justify-content-around">
-                  <img
-                    src="./assets/1.png"
-                    class="card-img-top m-0 p-0 img img-fluid"
-                    style="height: 100%; width: auto"
-                    alt="..."
-                  />
-                </div>
-                <div class="p-5 col-md-4">
-                  <div class="card-body">
-                    <h3 class="h3 mx-2 my-1 card-title">
-                      Upload your chest X-ray
-                    </h3>
-                    <p class="card-text">
-                      You can upload your chest X-ray image in JPG, PNG or JPEG
-                      format. The image should be clear and show the entire
-                      chest area.
-                    </p>
-                    <p class="card-text text-primary"></p>
-                  </div>
-                </div>
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner w3-black bg-gradient py-3 px-1 shadow-custom-lg my-5 d-flex align-items-center" style="width: 100%; height: 800px" id="how-to">
+      <div class="carousel-item active w-100">
+        <div class="d-flex align-items-center justify-content-around w-100 h-100 m-5 p-5" style="height: 700px">
+          <div class="mb-3 h-100">
+            <div class="d-flex align-items-center justify-content-center w3-black bg-gradient h-100 w-100" style="border: black">
+              <div class="col-md-6 m-0 h-100 d-flex justify-content-around">
+                <img src="./assets/1.png" class="card-img-top m-0 p-0 img img-fluid" style="height: 100%; width: auto" alt="..." />
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item w-100">
-          <div
-            class="w3-black bg-gradient d-flex align-items-center justify-content-around w-100"
-            style="height: 700px"
-          >
-            <div class="mb-3 h-100">
-              <div
-                class="d-flex align-items-center justify-content-center h-100 w-100"
-                style="border: black"
-              >
-                <div class="col-md-6 m-0 h-100 d-flex justify-content-around">
-                  <img
-                    src="./assets/2.png"
-                    class="card-img-top m-0 p-0 img img-fluid"
-                    style="height: 100%; width: auto"
-                    alt="..."
-                  />
-                </div>
-                <div class="col-md-4">
-                  <div class="card-body">
-                    <h3 class="h3 mx-2 my-1 card-title">Get instant results</h3>
-                    <p class="card-text">
-                      Our AI model will analyze your chest X-ray image and give
-                      you a probability score for pneumonia. You will also see a
-                      heatmap that highlights the affected areas.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item w-100">
-          <div
-            class="w3-black bg-gradient d-flex align-items-center justify-content-around w-100"
-            style="height: 700px"
-          >
-            <div class="mb-3 h-100 w-75">
-              <div
-                class="d-flex align-items-center justify-content-center h-100 w-100"
-                style="border: black"
-              >
-                <div class="col-md-6 m-0 h-100 d-flex justify-content-around">
-                  <img
-                    src="./assets/feedback_high_guide.png"
-                    class="card-img-top m-0 p-0 img img-fluid"
-                    style="height: 100%; width: auto"
-                    alt="..."
-                  />
-                </div>
-                <div class="col-md-4">
-                  <div class="card-body">
-                    <h3 class="h3 mx-2 my-1 card-title">Consult a doctor</h3>
-                    <p>
-                      Based on our testing, our algorithm correctly identifies
-                      pneumonia when it exists
-                      <span class="text-primary font-weight-bold">95%</span> of
-                      the time. If the tool detects that the X-ray has a high
-                      probability of pneumonia,
-                      <span class="text-danger"
-                        >you should consult a doctor as soon as possible.</span
-                      >
-                    </p>
-                    <p class="card-text text-primary"></p>
-                  </div>
+              <div class="p-5 col-md-4">
+                <div class="card-body">
+                  <h3 class="h3 mx-2 my-1 card-title">
+                    Upload your chest X-ray
+                  </h3>
+                  <p class="card-text">
+                    You can upload your chest X-ray image in JPG, PNG or JPEG
+                    format. The image should be clear and show the entire
+                    chest area.
+                  </p>
+                  <p class="card-text text-primary"></p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Left and right controls/icons -->
-      <button
-        class="carousel-control-prev carousel-control"
-        type="button"
-        data-bs-target="#my_shiny_carousel"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button
-        class="carousel-control-next carousel-control"
-        type="button"
-        data-bs-target="#my_shiny_carousel"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon"></span>
-      </button>
+      <div class="carousel-item w-100">
+        <div class="d-flex align-items-center justify-content-around w-100 h-100 m-5 p-5" style="height: 700px">
+          <div class="mb-3 h-100">
+            <div class="d-flex align-items-center justify-content-center w3-black bg-gradient h-100 w-100" style="border: black">
+              <div class="col-md-6 m-0 h-100 d-flex justify-content-around">
+                <img src="./assets/2.png" class="card-img-top m-0 p-0 img img-fluid" style="height: 100%; width: auto" alt="..." />
+              </div>
+              <div class="p-5 col-md-4">
+                <div class="card-body">
+                  <h3 class="h3 mx-2 my-1 card-title">Get instant results</h3>
+                  <p class="card-text">
+                    Our AI model will analyze your chest X-ray image and give
+                    you a probability score for pneumonia. You will also see a
+                    heatmap that highlights the affected areas.
+                  </p>
+                  <p class="card-text text-primary"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item w-100">
+        <div class="d-flex align-items-center justify-content-around w-100 h-100 m-5 p-5" style="height: 700px">
+          <div class="mb-3 h-100">
+            <div class="d-flex align-items-center justify-content-center w3-black bg-gradient h-100 w-100" style="border: black">
+              <div class="col-md-6 m-0 h-100 d-flex justify-content-around">
+                <img src="./assets/feedback_high_guide.png" class="card-img-top m-0 p-0 img img-fluid" style="height: 100%; width: auto" alt="..." />
+              </div>
+              <div class="p-5 col-md-4">
+                <div class="card-body">
+                  <h3 class="h3 mx-2 my-1 card-title">Consult a doctor</h3>
+                  <p>
+                    Based on our testing, our algorithm correctly identifies
+                    pneumonia when it exists
+                    <span class="text-primary font-weight-bold">95%</span> of
+                    the time. If the tool detects that the X-ray has a high
+                    probability of pneumonia,
+                    <span class="text-danger">you should consult a doctor as soon as possible.</span>
+                  </p>
+                  <p class="card-text text-primary"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev carousel-control" type="button" data-bs-target="#my_shiny_carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next carousel-control" type="button" data-bs-target="#my_shiny_carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
 
-    <!-- call to action -->
-    <div
-      class="hero-bottom d-flex w3-center shadow-inset p-5"
-      data-aos="zoom-out"
-      data-aos-delay="100"
-    >
-      <div class="container-fluid mt-5 flex-column">
-        <p class="text-lg">What are you waiting for?</p>
-        <h1 class="text-shadow">try the tool for free now!</h1>
-        <a href="feature.html" class="hero-button shadow-lg btn-change6"
-          >START DIAGNOSIS</a
-        >
-      </div>
+  <!-- call to action -->
+  <div class="hero-bottom d-flex w3-center shadow-inset p-5" data-aos="zoom-out" data-aos-delay="100">
+    <div class="container-fluid mt-5 flex-column">
+      <p class="text-lg">What are you waiting for?</p>
+      <h1 class="text-shadow">try the tool for free now!</h1>
+      <a href="feature.html" class="hero-button shadow-lg btn-change6">START DIAGNOSIS</a>
     </div>
-    <footer class="row p-0 m-0 mt-5 w3-black shadow-custom-sm">
-      <div
-        class="d-flex bg-dark justify-content-center align-items-center fw-bold p-4"
-      >
-        <a
-          class="text-decoration-none mx-5 my-2"
-          style="color: white"
-          href="./feature.html"
-          >Try the tool</a
-        >
-        <a
-          class="text-decoration-none mx-5 my-2"
-          style="color: white"
-          href="#background"
-          >Background</a
-        >
-        <a
-          class="text-decoration-none mx-5 my-2"
-          style="color: white"
-          href="./about.html"
-          >About Us</a
-        >
-        <a
-          class="text-decoration-none mx-5 my-2"
-          style="color: white"
-          href="#how-to"
-          >How To</a
-        >
-      </div>
-      <div class="d-flex justify-content-around align-items-center fw-bold p-4">
-        <!-- <a class="text-decoration-none" style="color: white" href="./index.html"
+  </div>
+  <footer class="row p-0 m-0 mt-5 w3-black shadow-custom-sm">
+    <div class="d-flex bg-dark justify-content-center align-items-center fw-bold p-4">
+      <a class="text-decoration-none mx-5 my-2" style="color: white" href="./feature.html">Try the tool</a>
+      <a class="text-decoration-none mx-5 my-2" style="color: white" href="#background">Background</a>
+      <a class="text-decoration-none mx-5 my-2" style="color: white" href="./about.html">About Us</a>
+      <a class="text-decoration-none mx-5 my-2" style="color: white" href="#how-to">How To</a>
+    </div>
+    <div class="d-flex justify-content-around align-items-center fw-bold p-4">
+      <!-- <a class="text-decoration-none" style="color: white" href="./index.html"
           >Home</a
         >
         <a class="text-decoration-none" style="color: white" href="./about.html"
           >About us</a
         > -->
-      </div>
-      <div class="text-center p-1" style="color: white">
-        &copy; 2023. All rights reserved.
-      </div>
-    </footer>
+    </div>
+    <div class="text-center p-1" style="color: white">
+      &copy; 2023. All rights reserved.
+    </div>
+  </footer>
 
-    <div id="preloader"></div>
-    <a
-      href="#"
-      class="back-to-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
-  </body>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</body>
+
 </html>
