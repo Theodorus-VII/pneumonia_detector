@@ -35,7 +35,7 @@ body {
 
 .gradient-animation {
   background-size: 180% 180%;
-  animation: gradient-animation 15s ease infinite;
+  animation: gradient-animation 10s ease infinite;
 }
 
 @keyframes gradient-animation {
@@ -147,7 +147,7 @@ body {
 }
 
 .hero_container {
-  background-image: url('assets/doctor.jpg');
+  background-image: url('../images/doctor.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
